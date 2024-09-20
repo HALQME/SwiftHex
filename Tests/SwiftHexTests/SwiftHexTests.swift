@@ -7,6 +7,7 @@ struct InitTests {
     func initializeWithHexString() {
         #expect(try! Hex("00000").storage.value == .zero)
         #expect(try! Hex("F").storage.value == UInt64(15))
+        #expect("9999999999999999".isHexable() == true)
     }
 
     @Test("returns nil if invalid hex string")
